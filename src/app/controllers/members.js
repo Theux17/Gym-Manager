@@ -38,7 +38,7 @@ module.exports = {
 
             if(!member) return res.send("Member not found!")
 
-            member.birth = age(member.birth).birthDay
+            member.birth = date(member.birth).birthDay
      
             return res.render("members/show", { member })
     
@@ -53,12 +53,10 @@ module.exports = {
             member.birth = date(member.birth).iso
             
             Member.instructorsSelectOptions(function(options){
-                return res.render("members/create", {member ,instructorOptions: options })
+                return res.render("members/edit", {member, instructorOptions: options })
             })
 
         })
-    
-        
     },
 
     put(req, res){
