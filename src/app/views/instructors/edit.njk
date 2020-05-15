@@ -35,6 +35,19 @@
         </form>
 
         </section>
+
+        <script>
+            const formDelete = document.querySelector("#form-delete")
+
+            formDelete.addEventListener("submit", function(event){
+                const confirmation = confirm("Deseja deletar o usuário cadastrado ?")
+
+                if(!confirmation){
+                    event.preventDefault()
+                }
+            })
+
+        </script>
      
     </div>
 
